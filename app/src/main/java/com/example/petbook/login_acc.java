@@ -90,7 +90,7 @@ public class login_acc extends AppCompatActivity {
         String userUsername = username.getText().toString().trim();
         String userPassword = password.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("key");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(key);
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -111,6 +111,9 @@ public class login_acc extends AppCompatActivity {
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
                         Intent intent = new Intent(login_acc.this, MainActivity.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("username", usernameFromDB);
 
 
 
