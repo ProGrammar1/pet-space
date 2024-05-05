@@ -90,7 +90,7 @@ public class login_acc extends AppCompatActivity {
         String userUsername = username.getText().toString().trim();
         String userPassword = password.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(key);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -43,7 +44,7 @@ public class signup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 database = FirebaseDatabase.getInstance();
-            databaseReference = database.getReference(data);
+            databaseReference = database.getReference("users");
 
             String email = signup_email.getText().toString();
             String signup_name = name.getText().toString();
@@ -55,8 +56,8 @@ public class signup extends AppCompatActivity {
                 String signup_address = address.getText().toString();
 
                 helperclass helperclass = new helperclass(signup_username,email,signup_pass,signup_address,signup_name);
-                databaseReference.child(signup_name).setValue(helperclass);
-
+                databaseReference.child(signup_username).setValue(helperclass);
+                Log.d("toast", "success");
                 Toast.makeText(com.example.petbook.signup.this, "Sign Up Successful", Toast.LENGTH_SHORT);
 
                 Intent intent = new Intent(signup.this, login_acc.class);
