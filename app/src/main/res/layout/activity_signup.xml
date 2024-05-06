@@ -73,14 +73,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
         android:fontFamily="@font/inter_bold"
         android:text="SIGN UP"
         android:textSize="31sp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/name"
@@ -142,12 +142,14 @@
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/profile"
+            android:id="@+id/imageprof"
             android:scaleType="centerCrop"
             app:riv_oval="true" />
 
@@ -157,8 +159,20 @@
             android:layout_gravity="center"
             android:text="Add Image"
             android:textColor="@color/black"
+            android:id="@+id/textaddimage"
             android:textSize="10sp" />
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/petspace2" />
 
 
     <!--    <EditText-->
